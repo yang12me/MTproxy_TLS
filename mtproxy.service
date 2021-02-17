@@ -1,0 +1,15 @@
+[Unit]
+Description=The MTproxy server
+After=network.target remote-fs.target nss-lookup.target
+
+[Service]
+Type=forking
+PIDFile=/usr/local/src/mtproxy/pid/pid_mtproxy
+ExecStartPre=/usr/bin/rm -f /usr/local/src/mtproxy/pid/pid_mtproxy
+ExecStart=/usr/local/src/mtproxy/run.sh
+KillSignal=SIGQUIT
+TimeoutStopSec=5
+KillMode=mixed
+
+[Install]
+WantedBy=multi-user.target
