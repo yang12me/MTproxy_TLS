@@ -127,7 +127,7 @@ config_mtp() {
   cd $WORKDIR
   echo -e "检测到您的配置文件不存在, 为您指引生成!" && print_line
   while true; do
-    default_port=443
+    default_port=990
     echo -e "请输入一个客户端连接端口 [1-65535]"
     read -p "(默认端口: ${default_port}):" input_port
     [ -z "${input_port}" ] && input_port=${default_port}
@@ -148,8 +148,8 @@ config_mtp() {
   # 管理端口
   while true; do
     default_manage=8888
-    echo -e "请输入一个管理端口 [1-65535]"
-    read -p "(默认端口: ${default_manage}):" input_manage_port
+#    echo -e "请输入一个管理端口 [1-65535]"
+#    read -p "(默认端口: ${default_manage}):" input_manage_port
     [ -z "${input_manage_port}" ] && input_manage_port=${default_manage}
     expr ${input_manage_port} + 1 &>/dev/null
     if [ $? -eq 0 ] && [ $input_manage_port -ne $input_port ]; then
