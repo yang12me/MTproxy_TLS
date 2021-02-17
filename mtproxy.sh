@@ -1,6 +1,7 @@
 #!/bin/bash
 
 WORKDIR="/usr/local/src/mtproxy"
+pid_file=$WORKDIR/pid/pid_mtproxy
 mtproxy_service_dir="/etc/systemd/system"
 
 mkdir -p $WORKDIR && cd $WORKDIR || exit 1
@@ -110,6 +111,16 @@ install() {
 
 print_line() {
   echo -e "========================================="
+}
+
+status_mtp(){
+  if [ -f $pid_file ];then
+    pid_exists `cat $pid_file`
+    if [[ $? == 1 ]];then
+      return 1
+    fi
+  fi
+  return 0
 }
 
 config_mtp() {
@@ -250,14 +261,16 @@ debug_mtp() {
 }
 
 config_systemd(){
+  wget -P $WORKDIR https://raw.githubusercontent.com/wulabing/mtp/master/run.sh && chmod +x $WORKDIR/run.sh
   wget -P $mtproxy_service_dir https://raw.githubusercontent.com/wulabing/mtp/master/mtproxy.service
+  systemctl daemon-reload && systemctl enable mtproxy
 }
 
 uninstall(){
   systemctl stop mtproxy
   rm -rf $WORKDIR
-  rm -f $mtproxy_service_dir/mtproxy.service
-  echo "\tMTProxy 卸载完成"
+  rm -f $mtproxy_service_dir/mtproxy.service && systemctl daemon-reload
+  echo "MTProxy 卸载完成"
 }
 
 param=$1
@@ -275,6 +288,15 @@ else
     config_mtp
     config_systemd
     systemctl start mtproxy
+    info_mtp
+    print_line
+    echo -e "配置文件: $WORKDIR/mtp_config"
+    echo "使用方式:"
+    echo -e "\t运行 systemctl start mtproxy"
+    echo -e "\t停止 systemctl stop mtproxy"
+    echo -e "\t重启 systemctl restart mtproxy"
+    echo -e "\t开机自启动 systemctl enable mtproxy"
+    echo -e "\t卸载 bash $0 uninstall"
   else
     [ ! -f "$WORKDIR/mtp_config" ] && config_mtp
     echo "MTProxyTLS一键安装脚本"
