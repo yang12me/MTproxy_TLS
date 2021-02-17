@@ -7,8 +7,7 @@ Type=forking
 PIDFile=/usr/local/src/mtproxy/pid/pid_mtproxy
 ExecStartPre=/usr/bin/rm -f /usr/local/src/mtproxy/pid/pid_mtproxy
 ExecStart=/usr/local/src/mtproxy/run.sh
-KillSignal=SIGQUIT
-TimeoutStopSec=5
+KillSignal=SIGTERM
 KillMode=mixed
 
 [Install]
