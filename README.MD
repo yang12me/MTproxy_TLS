@@ -25,9 +25,11 @@ https://github.com/wulabing/Xray_onekey
 
 
 ## 配置文件: /usr/local/src/mtproxy/mtp_config
+
+
 ## 使用方式:
-	 运行 systemctl start mtproxy
-	 停止 systemctl stop mtproxy
-	 重启 systemctl restart mtproxy
-	 开机自启动 systemctl enable mtproxy
-	 卸载 bash mtproxy.sh uninstall
+	 运行	           systemctl start mtproxy
+	 停止	      	   systemctl stop mtproxy
+	 重启 	  	   systemctl restart mtproxy
+	 开机自启动 		systemctl enable mtproxy
+	 卸载                bash mtproxy.sh uninstall
