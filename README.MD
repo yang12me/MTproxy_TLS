@@ -22,3 +22,12 @@ https://github.com/wulabing/Xray_onekey
 * 添加 systemd 进程守护，mtproxy 通过 systemd 控制 启停 与 开机自启
 * 删除了通过脚本控制启停的部分
 * 脚本仅支持使用systemd管理的系统 (建议 Centos7+ / Ubuntu18.04+ / Debian9+ )
+
+
+## 配置文件: /usr/local/src/mtproxy/mtp_config
+## 使用方式:
+	 运行 systemctl start mtproxy
+	 停止 systemctl stop mtproxy
+	 重启 systemctl restart mtproxy
+	 开机自启动 systemctl enable mtproxy
+	 卸载 bash mtproxy.sh uninstall
