@@ -7,6 +7,11 @@
 
 wget -N --no-check-certificate "https://github.com/wulabing/mtp/raw/master/mtproxy.sh" && chmod +x mtproxy.sh && bash mtproxy.sh
 
+## 提取自：
+
+wulabing/Xray_onekey: Xray 基于 Nginx 的 VLESS + XTLS 一键安装脚本
+https://github.com/wulabing/Xray_onekey
+
 ## 内容变更
 * 非绿色版，但提供卸载功能，会清空相关残留文件
 * 默认端口由 443 变更为 990 防止和 xray 默认端口冲突
