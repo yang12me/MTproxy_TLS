@@ -3,7 +3,7 @@
 基于 https://github.com/sunpma/mtp 修改
 基本使用方法请参考上游
 
-## 安装
+## 安装 MTproxy
 
 wget -N --no-check-certificate "https://github.com/wulabing/mtp/raw/master/mtproxy.sh" && chmod +x mtproxy.sh && bash mtproxy.sh
 
