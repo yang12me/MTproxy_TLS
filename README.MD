@@ -33,4 +33,4 @@ https://github.com/wulabing/Xray_onekey
 	 停止	      	   systemctl stop mtproxy
 	 重启 	  	   systemctl restart mtproxy
 	 开机自启动 	   systemctl enable mtproxy
-	 卸载               bash mtproxy.sh uninstall
+	 卸载              bash mtproxy.sh uninstall
