@@ -3,6 +3,10 @@
 基于 https://github.com/sunpma/mtp 修改
 基本使用方法请参考上游
 
+## 安装
+
+wget -N --no-check-certificate "https://github.com/wulabing/mtp/raw/master/mtproxy.sh" && chmod +x mtproxy.sh && bash mtproxy.sh
+
 ## 内容变更
 * 非绿色版，但提供卸载功能，会清空相关残留文件
 * 默认端口由 443 变更为 990 防止和 xray 默认端口冲突
