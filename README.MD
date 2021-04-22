@@ -24,7 +24,8 @@ https://github.com/wulabing/Xray_onekey
 * 脚本仅支持使用systemd管理的系统 (建议 Centos7+ / Ubuntu18.04+ / Debian9+ )
 
 
-## 配置文件: /usr/local/src/mtproxy/mtp_config
+## 配置文件: 
+/usr/local/src/mtproxy/mtp_config
 
 
 ## 使用方式:
