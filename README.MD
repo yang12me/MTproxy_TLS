@@ -6,6 +6,8 @@
 
 ## 安装 MTproxy
 
+sudo -i
+
 mkdir /home/mtproxy && cd /home/mtproxy
 
 wget -N --no-check-certificate "https://github.com/wulabing/mtp/raw/master/mtproxy.sh" && chmod +x mtproxy.sh && bash mtproxy.sh
