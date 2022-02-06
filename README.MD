@@ -12,6 +12,11 @@ mkdir /home/mtproxy && cd /home/mtproxy
 
 wget -N --no-check-certificate "https://github.com/wulabing/mtp/raw/master/mtproxy.sh" && chmod +x mtproxy.sh && bash mtproxy.sh
 
+
+## 查看配置信息
+nano /usr/local/src/mtproxy/mtp_config
+
+
 ## 提取自：
 
 wulabing/Xray_onekey: Xray 基于 Nginx 的 VLESS + XTLS 一键安装脚本
